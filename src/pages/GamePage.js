@@ -108,7 +108,7 @@ export default function GamePage({
           grannies={grannies}
           updateGrannies={updateGrannies}
         />
-        {cookies >= showCookiedil && hasGameStarted && (
+        {cookies >= showCookiedil && (
           <Crocodile
             onShowCookiedil={() => handleShowCookiedil(amountOfCookies)}
             amountOfCookies={amountOfCookies}
