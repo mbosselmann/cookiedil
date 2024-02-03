@@ -14,7 +14,7 @@ export default function GamePage({
   updateAmountOfHiredGrannies,
   hasGameStarted,
   updateHasGameStarted,
-  onReset
+  onReset,
 }) {
   const [grannies, setGrannies] = useState(granniesData);
   const [cookiesPerSecond, setCookiesPerSecond] = useState(0);
@@ -90,7 +90,9 @@ export default function GamePage({
   return (
     <>
       <ButtonContainer>
-        <Button onClick={updateHasGameStarted}>Back to Start</Button>
+        <Button onClick={updateHasGameStarted} type="button">
+          Back to Start
+        </Button>
         <Button onClick={onReset} type="button" disabled={cookies <= 0}>
           Restart Game
         </Button>
@@ -106,7 +108,7 @@ export default function GamePage({
           grannies={grannies}
           updateGrannies={updateGrannies}
         />
-        {cookies >= showCookiedil && (
+        {cookies >= showCookiedil && hasGameStarted && (
           <Crocodile
             onShowCookiedil={() => handleShowCookiedil(amountOfCookies)}
             amountOfCookies={amountOfCookies}

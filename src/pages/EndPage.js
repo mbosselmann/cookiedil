@@ -7,7 +7,7 @@ export default function EndPage({
   cookies,
   seconds,
   amountOfHiredGrannies,
-  onReset
+  onReset,
 }) {
   return (
     <>
@@ -16,7 +16,7 @@ export default function EndPage({
         <h2>Yay! You did it!</h2>
         <CookiedilHead />
         <p>
-          You baked {cookies} cookies in {seconds} seconds with the help of
+          You baked {cookies} cookies in {seconds} seconds with the help of {""}
           {amountOfHiredGrannies} grannies.
         </p>
         <Button type="button" onClick={onReset}>
