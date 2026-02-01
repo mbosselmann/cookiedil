@@ -93,8 +93,42 @@ export default function App() {
 
 const Main = styled.main`
   height: 100%;
-  max-width: 600px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  padding: 10px;
+  max-width: 650px;
+  font-family: 'Fredoka', sans-serif;
+  padding: 20px;
   position: relative;
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 30px;
+  border: 6px solid #FF6B6B;
+  box-shadow: 
+    12px 12px 0 #4ECDC4,
+    24px 24px 0 #FFE66D,
+    0 0 60px rgba(255, 107, 107, 0.3);
+  margin: 20px;
+  backdrop-filter: blur(10px);
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    width: 60px;
+    height: 60px;
+    background: #FFE66D;
+    border-radius: 50%;
+    border: 4px solid #FF6B6B;
+    z-index: 10;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 30px;
+    width: 40px;
+    height: 40px;
+    background: #4ECDC4;
+    border-radius: 50%;
+    border: 4px solid #FFE66D;
+  }
 `;
