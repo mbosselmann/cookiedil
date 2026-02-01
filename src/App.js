@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState, useRef } from "react";
 import styled from "styled-components";
 import HomePage from "./pages/HomePage";
 import GamePage from "./pages/GamePage";
@@ -6,37 +6,58 @@ import EndPage from "./pages/EndPage";
 
 export default function App() {
   const [hasGameStarted, setHasGameStarted] = useState(false);
-  const [cookies, setCookies] = useState(0);
+  const [cookies, setCookies] = useState(900);
   const [seconds, setSeconds] = useState(0);
-  const [amountOfHiredGrannies, setAmountofHiredGrannies] = useState(0);
+  const [amountOfHiredGrannies, setAmountofHiredGrannies] = useState(3);
+  const [isGamePaused, setIsGamePaused] = useState(false);
+  const cookiesRef = useRef(cookies);
 
   const updateHasGameStarted = useCallback((boolean) => {
     setHasGameStarted(boolean);
   }, []);
 
-  const updateCookies = useCallback((numberOfCookies) => {
-    setCookies(numberOfCookies);
+  const updateCookies = useCallback((numberOfCookiesOrUpdater) => {
+    if (typeof numberOfCookiesOrUpdater === 'function') {
+      setCookies((prev) => {
+        const newValue = numberOfCookiesOrUpdater(prev);
+        cookiesRef.current = newValue;
+        return newValue;
+      });
+    } else {
+      cookiesRef.current = numberOfCookiesOrUpdater;
+      setCookies(numberOfCookiesOrUpdater);
+    }
   }, []);
 
   function handleReset() {
     setCookies(0);
     setHasGameStarted(false);
     setSeconds(0);
+    setIsGamePaused(false);
+    setAmountofHiredGrannies(0);
   }
 
   function updateAmountOfHiredGrannies(numberOfHiredGrannies) {
     setAmountofHiredGrannies(numberOfHiredGrannies);
   }
 
+  // Update ref when cookies changes
   useEffect(() => {
-    if (hasGameStarted) {
+    cookiesRef.current = cookies;
+  }, [cookies]);
+
+  useEffect(() => {
+    if (hasGameStarted && !isGamePaused) {
       const interval = setInterval(() => {
-        setSeconds(seconds + 1);
+        // Check cookies from ref to avoid restarting interval
+        if (cookiesRef.current < 1000) {
+          setSeconds(prev => prev + 1);
+        }
       }, 1000);
 
       return () => clearInterval(interval);
     }
-  }, [seconds, hasGameStarted]);
+  }, [hasGameStarted, isGamePaused]);
 
   return (
     <>
@@ -49,7 +70,7 @@ export default function App() {
         />
       ) : (
         <Main>
-          {!hasGameStarted && seconds !== 0 ? (
+          {!hasGameStarted ? (
             <HomePage updateHasGameStarted={updateHasGameStarted} />
           ) : (
             <GamePage
@@ -61,6 +82,7 @@ export default function App() {
               hasGameStarted={hasGameStarted}
               updateHasGameStarted={updateHasGameStarted}
               onReset={handleReset}
+              setIsGamePaused={setIsGamePaused}
             />
           )}
         </Main>

@@ -15,26 +15,49 @@ export default function GamePage({
   hasGameStarted,
   updateHasGameStarted,
   onReset,
+  setIsGamePaused,
 }) {
-  const [grannies, setGrannies] = useState(granniesData);
-  const [cookiesPerSecond, setCookiesPerSecond] = useState(0);
+  const [grannies, setGrannies] = useState(() => {
+    return granniesData.map((grannie, index) => ({
+      ...grannie,
+      isHired: index < amountOfHiredGrannies
+    }));
+  });
+  const [cookiesPerSecond, setCookiesPerSecond] = useState(() => {
+    return granniesData
+      .slice(0, amountOfHiredGrannies)
+      .reduce((total, grannie) => total + grannie.cookiesPerSecond, 0);
+  });
   const [showCookiedil, setShowCookiedil] = useState(250);
   const [amountOfCookies, setAmountOfCookies] = useState(100);
+  const [isCrocodileShowing, setIsCrocodileShowing] = useState(false);
+
+  // Reset grannies and cookiesPerSecond when amountOfHiredGrannies resets to 0
+  useEffect(() => {
+    if (amountOfHiredGrannies === 0 && cookies === 0) {
+      setGrannies(granniesData.map((grannie) => ({
+        ...grannie,
+        isHired: false
+      })));
+      setCookiesPerSecond(0);
+      setShowCookiedil(250);
+      setAmountOfCookies(100);
+      setIsCrocodileShowing(false);
+    }
+  }, [amountOfHiredGrannies, cookies]);
 
   function handleAdd() {
     updateCookies(cookies + 1);
     if (!hasGameStarted) {
       updateHasGameStarted(true);
     }
-    if (cookies >= showCookiedil) {
-      updateHasGameStarted(false);
-    }
   }
 
   function handleShowCookiedil(number) {
-    setShowCookiedil(showCookiedil + 200);
+    setShowCookiedil(prev => prev + 200);
     updateCookies(cookies - number);
-    updateHasGameStarted(true);
+    setIsCrocodileShowing(false);
+    setIsGamePaused(false);
   }
 
   function updateGrannies(grannie) {
@@ -46,26 +69,27 @@ export default function GamePage({
           : granniePerson
       );
       setGrannies(newGrannies);
-      setCookiesPerSecond(cookiesPerSecond + grannie.cookiesPerSecond);
+      setCookiesPerSecond(prev => prev + grannie.cookiesPerSecond);
       updateAmountOfHiredGrannies(amountOfHiredGrannies + 1);
     }
   }
 
   useEffect(() => {
-    if (hasGameStarted) {
+    if (hasGameStarted && !isCrocodileShowing) {
       const interval = setInterval(() => {
         if (cookiesPerSecond > 0) {
-          updateCookies(cookies + cookiesPerSecond);
+          updateCookies(prev => prev + cookiesPerSecond);
         }
       }, 1000);
 
       return () => clearInterval(interval);
     }
-  }, [hasGameStarted, cookies, cookiesPerSecond, updateCookies]);
+  }, [hasGameStarted, cookiesPerSecond, updateCookies, isCrocodileShowing]);
 
   useEffect(() => {
-    if (cookies >= showCookiedil) {
-      updateHasGameStarted(false);
+    if (cookies >= showCookiedil && !isCrocodileShowing) {
+      setIsCrocodileShowing(true);
+      setIsGamePaused(true);
       function updateAmountOfCookies() {
         if (amountOfHiredGrannies === 1) {
           setAmountOfCookies(80);
@@ -85,7 +109,7 @@ export default function GamePage({
       }
       updateAmountOfCookies();
     }
-  }, [cookies, showCookiedil, amountOfHiredGrannies, updateHasGameStarted]);
+  }, [cookies, showCookiedil, amountOfHiredGrannies, isCrocodileShowing, setIsGamePaused]);
 
   return (
     <>
@@ -108,7 +132,7 @@ export default function GamePage({
           grannies={grannies}
           updateGrannies={updateGrannies}
         />
-        {cookies >= showCookiedil && (
+        {isCrocodileShowing && (
           <Crocodile
             onShowCookiedil={() => handleShowCookiedil(amountOfCookies)}
             amountOfCookies={amountOfCookies}
