@@ -1,19 +1,51 @@
 <svg width="263" height="284" viewBox="0 0 263 284" fill="none" xmlns="http://www.w3.org/2000/svg">
-<ellipse cx="136" cy="172.5" rx="85" ry="111.5" fill="#D9D9D9"/>
-<ellipse rx="15.6278" ry="20.5" transform="matrix(-1 0 0 1 49.6278 187.5)" fill="#D9D9D9"/>
-<ellipse rx="15.6278" ry="20.5" transform="matrix(-1 0 0 1 225.628 187.5)" fill="#D9D9D9"/>
-<ellipse cx="42" cy="140" rx="42" ry="40" fill="#D9D9D9"/>
-<ellipse cx="72" cy="100" rx="42" ry="40" fill="#D9D9D9"/>
-<ellipse cx="114" cy="70" rx="42" ry="40" fill="#D9D9D9"/>
-<ellipse cx="164" cy="70" rx="42" ry="40" fill="#D9D9D9"/>
-<ellipse cx="51" cy="88" rx="42" ry="40" fill="#D9D9D9"/>
-<ellipse cx="93" cy="54" rx="42" ry="40" fill="#D9D9D9"/>
-<ellipse cx="198" cy="101" rx="42" ry="40" fill="#D9D9D9"/>
-<ellipse cx="135" cy="101" rx="42" ry="40" fill="#D9D9D9"/>
-<ellipse cx="219" cy="140" rx="42" ry="40" fill="#D9D9D9"/>
-<ellipse cx="146" cy="40" rx="42" ry="40" fill="#D9D9D9"/>
-<ellipse cx="221" cy="101" rx="42" ry="40" fill="#D9D9D9"/>
-<ellipse cx="198" cy="70" rx="42" ry="40" fill="#D9D9D9"/>
-<ellipse cx="42" cy="140" rx="42" ry="40" fill="#D9D9D9"/>
-<ellipse cx="127" cy="54" rx="42" ry="40" fill="#D9D9D9"/>
+<defs>
+  <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+    <feMerge>
+      <feMergeNode in="coloredBlur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+  <linearGradient id="hairGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#05d9e8;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#0892d0;stop-opacity:1" />
+  </linearGradient>
+  <linearGradient id="bodyGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#ff2a6d;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#d4145a;stop-opacity:1" />
+  </linearGradient>
+</defs>
+<!-- Body -->
+<g filter="url(#neonGlow)">
+  <ellipse cx="136" cy="172.5" rx="85" ry="111.5" fill="url(#bodyGradient)" stroke="#05d9e8" stroke-width="3"/>
+</g>
+<!-- Arms -->
+<ellipse rx="15.6278" ry="20.5" transform="matrix(-1 0 0 1 49.6278 187.5)" fill="#ff2a6d" stroke="#05d9e8" stroke-width="2"/>
+<ellipse rx="15.6278" ry="20.5" transform="matrix(-1 0 0 1 225.628 187.5)" fill="#ff2a6d" stroke="#05d9e8" stroke-width="2"/>
+<!-- Hair puffs with cyan glow -->
+<g filter="url(#neonGlow)">
+  <ellipse cx="42" cy="140" rx="42" ry="40" fill="url(#hairGradient)"/>
+  <ellipse cx="72" cy="100" rx="42" ry="40" fill="url(#hairGradient)"/>
+  <ellipse cx="114" cy="70" rx="42" ry="40" fill="url(#hairGradient)"/>
+  <ellipse cx="164" cy="70" rx="42" ry="40" fill="url(#hairGradient)"/>
+  <ellipse cx="51" cy="88" rx="42" ry="40" fill="url(#hairGradient)"/>
+  <ellipse cx="93" cy="54" rx="42" ry="40" fill="url(#hairGradient)"/>
+  <ellipse cx="198" cy="101" rx="42" ry="40" fill="url(#hairGradient)"/>
+  <ellipse cx="135" cy="101" rx="42" ry="40" fill="url(#hairGradient)"/>
+  <ellipse cx="219" cy="140" rx="42" ry="40" fill="url(#hairGradient)"/>
+  <ellipse cx="146" cy="40" rx="42" ry="40" fill="url(#hairGradient)"/>
+  <ellipse cx="221" cy="101" rx="42" ry="40" fill="url(#hairGradient)"/>
+  <ellipse cx="198" cy="70" rx="42" ry="40" fill="url(#hairGradient)"/>
+  <ellipse cx="127" cy="54" rx="42" ry="40" fill="url(#hairGradient)"/>
+</g>
+<!-- Pixel-style face elements -->
+<rect x="100" y="160" width="16" height="16" fill="#0a0a0f" rx="2"/>
+<rect x="155" y="160" width="16" height="16" fill="#0a0a0f" rx="2"/>
+<!-- Smile -->
+<path d="M110 200 Q136 230 165 200" stroke="#0a0a0f" stroke-width="6" fill="none" stroke-linecap="round"/>
+<!-- Glasses -->
+<rect x="90" y="150" width="35" height="35" fill="none" stroke="#ffd700" stroke-width="4" rx="4"/>
+<rect x="145" y="150" width="35" height="35" fill="none" stroke="#ffd700" stroke-width="4" rx="4"/>
+<line x1="125" y1="167" x2="145" y2="167" stroke="#ffd700" stroke-width="4"/>
 </svg>

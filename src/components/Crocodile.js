@@ -33,10 +33,43 @@ export default function Crocodile({
 
 const Article = styled.article`
   position: absolute;
-  margin: 30px;
+  margin: 20px;
   top: 10%;
-  background-color: #fff;
-  box-shadow: 0 0 25px lightgray;
-  border-radius: 15px;
+  left: 0;
+  right: 0;
+  background: linear-gradient(180deg, rgba(26, 26, 46, 0.98) 0%, rgba(10, 10, 15, 0.98) 100%);
+  border: 3px solid #ff2a6d;
+  border-radius: 8px;
   padding: 25px;
+  box-shadow: 
+    0 0 30px rgba(255, 42, 109, 0.5),
+    inset 0 0 40px rgba(255, 42, 109, 0.1);
+  text-align: center;
+  z-index: 100;
+
+  h2 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: clamp(0.6rem, 2vw, 0.9rem);
+    color: #ff2a6d;
+    text-shadow: 0 0 10px #ff2a6d;
+    margin-bottom: 15px;
+    animation: blink 0.5s ease-in-out infinite alternate;
+  }
+
+  p {
+    font-family: 'VT323', monospace;
+    font-size: 1.2rem;
+    color: #b0b0b0;
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+
+  @keyframes blink {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0.7;
+    }
+  }
 `;

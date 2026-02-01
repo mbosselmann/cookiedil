@@ -1,50 +1,64 @@
 <svg width="271" height="292" viewBox="0 0 271 292" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g filter="url(#filter0_d_21_301)">
-<ellipse cx="140" cy="172.5" rx="85" ry="111.5" fill="#E3C4A7"/>
-<ellipse rx="15.6278" ry="20.5" transform="matrix(-1 0 0 1 53.6278 187.5)" fill="#E3C4A7"/>
-<ellipse rx="15.6278" ry="20.5" transform="matrix(-1 0 0 1 229.628 187.5)" fill="#E3C4A7"/>
-<path d="M65 167.002C65 167.002 79.4936 152.833 92 153.002C104.777 153.174 119 167.002 119 167.002" stroke="black" stroke-width="5" stroke-linecap="round"/>
-<path d="M148 167.002C148 167.002 162.494 152.833 175 153.002C187.777 153.174 202 167.002 202 167.002" stroke="black" stroke-width="5" stroke-linecap="round"/>
-<g filter="url(#filter1_i_21_301)">
-<ellipse cx="46" cy="140" rx="42" ry="40" fill="#ACA5A5"/>
-<ellipse cx="76" cy="100" rx="42" ry="40" fill="#ACA5A5"/>
-<ellipse cx="118" cy="70" rx="42" ry="40" fill="#ACA5A5"/>
-<ellipse cx="168" cy="70" rx="42" ry="40" fill="#ACA5A5"/>
-<ellipse cx="55" cy="88" rx="42" ry="40" fill="#ACA5A5"/>
-<ellipse cx="97" cy="54" rx="42" ry="40" fill="#ACA5A5"/>
-<ellipse cx="202" cy="101" rx="42" ry="40" fill="#ACA5A5"/>
-<ellipse cx="139" cy="101" rx="42" ry="40" fill="#ACA5A5"/>
-<ellipse cx="223" cy="140" rx="42" ry="40" fill="#ACA5A5"/>
-<ellipse cx="150" cy="40" rx="42" ry="40" fill="#ACA5A5"/>
-<ellipse cx="225" cy="101" rx="42" ry="40" fill="#ACA5A5"/>
-<ellipse cx="202" cy="70" rx="42" ry="40" fill="#ACA5A5"/>
-<ellipse cx="46" cy="140" rx="42" ry="40" fill="#ACA5A5"/>
-<ellipse cx="131" cy="54" rx="42" ry="40" fill="#ACA5A5"/>
-</g>
-<path d="M67 192C67 192 81.0783 208.83 93.5846 208.999C106.362 209.171 121 192 121 192" stroke="black" stroke-width="5" stroke-linecap="round"/>
-<path d="M151 192C151 192 165.078 208.83 177.585 208.999C190.362 209.171 205 192 205 192" stroke="black" stroke-width="5" stroke-linecap="round"/>
-<path d="M111 246C111 246 125.078 262.83 137.585 262.999C150.362 263.171 165 246 165 246" stroke="black" stroke-width="5" stroke-linecap="round"/>
-</g>
 <defs>
-<filter id="filter0_d_21_301" x="0" y="0" width="271" height="292" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="4"/>
-<feGaussianBlur stdDeviation="2"/>
-<feComposite in2="hardAlpha" operator="out"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_21_301"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_21_301" result="shape"/>
-</filter>
-<filter id="filter1_i_21_301" x="4" y="0" width="263" height="184" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-<feFlood flood-opacity="0" result="BackgroundImageFix"/>
-<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
-<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="4"/>
-<feGaussianBlur stdDeviation="22.5"/>
-<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
-<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-<feBlend mode="normal" in2="shape" result="effect1_innerShadow_21_301"/>
-</filter>
+  <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+    <feMerge>
+      <feMergeNode in="coloredBlur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+  <linearGradient id="hairGradientFancy" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#ffd700;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#ffaa00;stop-opacity:1" />
+  </linearGradient>
+  <linearGradient id="bodyGradientFancy" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#9b5de5;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#7b2cbf;stop-opacity:1" />
+  </linearGradient>
 </defs>
+<!-- Body -->
+<g filter="url(#neonGlow)">
+  <ellipse cx="140" cy="172.5" rx="85" ry="111.5" fill="url(#bodyGradientFancy)" stroke="#ffd700" stroke-width="3"/>
+</g>
+<!-- Arms -->
+<ellipse rx="15.6278" ry="20.5" transform="matrix(-1 0 0 1 53.6278 187.5)" fill="#9b5de5" stroke="#ffd700" stroke-width="2"/>
+<ellipse rx="15.6278" ry="20.5" transform="matrix(-1 0 0 1 229.628 187.5)" fill="#9b5de5" stroke="#ffd700" stroke-width="2"/>
+<!-- Hair puffs with gold glow -->
+<g filter="url(#neonGlow)">
+  <ellipse cx="46" cy="140" rx="42" ry="40" fill="url(#hairGradientFancy)"/>
+  <ellipse cx="76" cy="100" rx="42" ry="40" fill="url(#hairGradientFancy)"/>
+  <ellipse cx="118" cy="70" rx="42" ry="40" fill="url(#hairGradientFancy)"/>
+  <ellipse cx="168" cy="70" rx="42" ry="40" fill="url(#hairGradientFancy)"/>
+  <ellipse cx="55" cy="88" rx="42" ry="40" fill="url(#hairGradientFancy)"/>
+  <ellipse cx="97" cy="54" rx="42" ry="40" fill="url(#hairGradientFancy)"/>
+  <ellipse cx="202" cy="101" rx="42" ry="40" fill="url(#hairGradientFancy)"/>
+  <ellipse cx="139" cy="101" rx="42" ry="40" fill="url(#hairGradientFancy)"/>
+  <ellipse cx="223" cy="140" rx="42" ry="40" fill="url(#hairGradientFancy)"/>
+  <ellipse cx="150" cy="40" rx="42" ry="40" fill="url(#hairGradientFancy)"/>
+  <ellipse cx="225" cy="101" rx="42" ry="40" fill="url(#hairGradientFancy)"/>
+  <ellipse cx="202" cy="70" rx="42" ry="40" fill="url(#hairGradientFancy)"/>
+  <ellipse cx="131" cy="54" rx="42" ry="40" fill="url(#hairGradientFancy)"/>
+</g>
+<!-- Pixel-style eyes -->
+<rect x="80" y="158" width="18" height="18" fill="#0a0a0f" rx="2"/>
+<rect x="172" y="158" width="18" height="18" fill="#0a0a0f" rx="2"/>
+<!-- Eyelashes -->
+<line x1="82" y1="150" x2="78" y2="140" stroke="#0a0a0f" stroke-width="3"/>
+<line x1="89" y1="150" x2="89" y2="138" stroke="#0a0a0f" stroke-width="3"/>
+<line x1="96" y1="150" x2="100" y2="140" stroke="#0a0a0f" stroke-width="3"/>
+<line x1="174" y1="150" x2="170" y2="140" stroke="#0a0a0f" stroke-width="3"/>
+<line x1="181" y1="150" x2="181" y2="138" stroke="#0a0a0f" stroke-width="3"/>
+<line x1="188" y1="150" x2="192" y2="140" stroke="#0a0a0f" stroke-width="3"/>
+<!-- Fancy glasses -->
+<path d="M65 155 Q70 145 90 150 Q110 145 115 155 Q115 180 90 185 Q65 180 65 155" fill="none" stroke="#ff2a6d" stroke-width="3"/>
+<path d="M155 155 Q160 145 180 150 Q200 145 205 155 Q205 180 180 185 Q155 180 155 155" fill="none" stroke="#ff2a6d" stroke-width="3"/>
+<line x1="115" y1="165" x2="155" y2="165" stroke="#ff2a6d" stroke-width="3"/>
+<!-- Fancy smile with lipstick -->
+<path d="M110 215 Q140 250 170 215" stroke="#ff2a6d" stroke-width="8" fill="none" stroke-linecap="round"/>
+<!-- Crown/tiara -->
+<path d="M100 35 L110 15 L120 30 L135 5 L150 30 L160 15 L170 35" stroke="#ffd700" stroke-width="4" fill="none"/>
+<!-- Sparkles -->
+<rect x="60" y="60" width="8" height="8" fill="#ff2a6d"/>
+<rect x="200" y="45" width="8" height="8" fill="#ff2a6d"/>
+<rect x="140" y="8" width="6" height="6" fill="#05d9e8"/>
 </svg>
