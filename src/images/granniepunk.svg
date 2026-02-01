@@ -1,0 +1,69 @@
+<svg width="263" height="284" viewBox="0 0 263 284" fill="none" xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <filter id="neonGlowPunk" x="-50%" y="-50%" width="200%" height="200%">
+    <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+    <feMerge>
+      <feMergeNode in="coloredBlur"/>
+      <feMergeNode in="SourceGraphic"/>
+    </feMerge>
+  </filter>
+  <linearGradient id="mohawkGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" style="stop-color:#ff2a6d;stop-opacity:1" />
+    <stop offset="50%" style="stop-color:#05d9e8;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#39ff14;stop-opacity:1" />
+  </linearGradient>
+  <linearGradient id="bodyGradientPunk" x1="0%" y1="0%" x2="100%" y2="100%">
+    <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+    <stop offset="100%" style="stop-color:#0a0a0f;stop-opacity:1" />
+  </linearGradient>
+</defs>
+<!-- Body - Dark punk style -->
+<g filter="url(#neonGlowPunk)">
+  <ellipse cx="136" cy="172.5" rx="85" ry="111.5" fill="url(#bodyGradientPunk)" stroke="#ff2a6d" stroke-width="4"/>
+</g>
+<!-- Punk jacket details -->
+<path d="M80 140 L70 200 L136 220 L200 200 L190 140" fill="none" stroke="#39ff14" stroke-width="3" stroke-dasharray="8,4"/>
+<!-- Studs on shoulders -->
+<circle cx="75" cy="150" r="5" fill="#ffd700" filter="url(#neonGlowPunk)"/>
+<circle cx="90" cy="145" r="5" fill="#ffd700" filter="url(#neonGlowPunk)"/>
+<circle cx="180" cy="145" r="5" fill="#ffd700" filter="url(#neonGlowPunk)"/>
+<circle cx="195" cy="150" r="5" fill="#ffd700" filter="url(#neonGlowPunk)"/>
+<!-- Arms with bracelets -->
+<ellipse rx="15.6278" ry="20.5" transform="matrix(-1 0 0 1 49.6278 187.5)" fill="#1a1a2e" stroke="#ff2a6d" stroke-width="3"/>
+<ellipse rx="15.6278" ry="20.5" transform="matrix(-1 0 0 1 225.628 187.5)" fill="#1a1a2e" stroke="#ff2a6d" stroke-width="3"/>
+<!-- Spike bracelets -->
+<rect x="42" y="175" width="15" height="6" fill="#ffd700"/>
+<polygon points="44,175 47,168 50,175" fill="#ffd700"/>
+<polygon points="50,175 53,168 56,175" fill="#ffd700"/>
+<rect x="218" y="175" width="15" height="6" fill="#ffd700"/>
+<polygon points="220,175 223,168 226,175" fill="#ffd700"/>
+<polygon points="226,175 229,168 232,175" fill="#ffd700"/>
+<!-- Mohawk hair -->
+<g filter="url(#neonGlowPunk)">
+  <polygon points="136,5 120,80 152,80" fill="url(#mohawkGradient)"/>
+  <polygon points="136,15 115,90 157,90" fill="url(#mohawkGradient)"/>
+  <polygon points="136,25 110,100 162,100" fill="url(#mohawkGradient)"/>
+  <polygon points="136,35 108,110 164,110" fill="url(#mohawkGradient)"/>
+</g>
+<!-- Side of head shaved - pixel pattern -->
+<rect x="70" y="100" width="8" height="8" fill="#2a2a3e"/>
+<rect x="80" y="95" width="8" height="8" fill="#2a2a3e"/>
+<rect x="65" y="115" width="8" height="8" fill="#2a2a3e"/>
+<rect x="178" y="100" width="8" height="8" fill="#2a2a3e"/>
+<rect x="185" y="95" width="8" height="8" fill="#2a2a3e"/>
+<rect x="190" y="115" width="8" height="8" fill="#2a2a3e"/>
+<!-- Angry pixel eyes -->
+<rect x="100" y="155" width="20" height="12" fill="#ff2a6d"/>
+<rect x="104" y="159" width="12" height="6" fill="#0a0a0f"/>
+<rect x="150" y="155" width="20" height="12" fill="#ff2a6d"/>
+<rect x="154" y="159" width="12" height="6" fill="#0a0a0f"/>
+<!-- Eyebrow piercings -->
+<circle cx="95" cy="150" r="3" fill="#05d9e8" filter="url(#neonGlowPunk)"/>
+<circle cx="175" cy="150" r="3" fill="#05d9e8" filter="url(#neonGlowPunk)"/>
+<!-- Nose ring -->
+<circle cx="136" cy="185" r="6" fill="none" stroke="#ffd700" stroke-width="3"/>
+<!-- Smirk -->
+<path d="M115 205 Q140 215 155 200" stroke="#ff2a6d" stroke-width="5" fill="none" stroke-linecap="round"/>
+<!-- Safety pin on body -->
+<path d="M160 240 L175 250 L175 260 L165 260 Q155 255 160 245 Z" fill="none" stroke="#c0c0c0" stroke-width="2"/>
+</svg>
