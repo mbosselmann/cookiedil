@@ -124,14 +124,27 @@ const List = styled.ul`
   max-width: 650px;
   list-style: none;
   text-align: center;
-  padding: 15px 10px;
-  margin: 0 0 8px;
+  padding: 15px 20px;
+  margin: 0 0 12px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  background: linear-gradient(180deg, rgba(26, 26, 46, 0.9) 0%, rgba(10, 10, 15, 0.9) 100%);
+  border: 2px solid #05d9e8;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(5, 217, 232, 0.2);
+
+  li {
+    font-family: 'Press Start 2P', cursive;
+    font-size: clamp(0.5rem, 2vw, 0.7rem);
+    color: #ff2a6d;
+    text-shadow: 0 0 5px #ff2a6d;
+    padding: 5px 0;
+  }
 `;
 
 const ButtonContainer = styled.div`
   display: flex;
-  gap: 10px;
+  gap: 12px;
+  margin-bottom: 15px;
 `;

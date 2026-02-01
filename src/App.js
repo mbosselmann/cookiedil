@@ -72,7 +72,14 @@ export default function App() {
 const Main = styled.main`
   height: 100%;
   max-width: 600px;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  padding: 10px;
+  font-family: 'VT323', monospace;
+  padding: 20px;
   position: relative;
+  background: rgba(10, 10, 15, 0.8);
+  border: 3px solid #ff2a6d;
+  border-radius: 8px;
+  box-shadow: 
+    0 0 20px rgba(255, 42, 109, 0.3),
+    inset 0 0 60px rgba(5, 217, 232, 0.05);
+  margin: 20px;
 `;

@@ -26,7 +26,14 @@ export default function HomePage({ updateHasGameStarted }) {
 }
 
 const StyledCookiedil = styled(Cookiedil)`
-  width: 50%;
-  max-width: 500px;
+  width: 60%;
+  max-width: 300px;
   height: auto;
+  filter: drop-shadow(0 0 20px #05d9e8);
+  transition: all 0.3s ease;
+
+  &:hover {
+    filter: drop-shadow(0 0 30px #ff2a6d);
+    transform: scale(1.02);
+  }
 `;
